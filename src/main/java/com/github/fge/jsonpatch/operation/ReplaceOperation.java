@@ -26,7 +26,6 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.fge.jackson.jsonpointer.JsonPointer;
 import com.github.fge.jsonpatch.JsonPatchException;
-import com.github.fge.jsonpatch.operation.PathValueOperation;
 import com.google.common.collect.Iterables;
 
 /**
@@ -38,7 +37,7 @@ import com.google.common.collect.Iterables;
  * <p>It is an error condition if {@code path} does not point to an actual JSON
  * value.</p>
  */
-public final class ReplaceOperation
+public class ReplaceOperation
     extends PathValueOperation
 {
     public static final String OPERATION_NAME = "replace";

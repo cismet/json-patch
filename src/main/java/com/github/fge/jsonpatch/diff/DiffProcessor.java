@@ -34,32 +34,32 @@ import java.util.List;
 import java.util.Map;
 
 // TODO: cleanup
-final class DiffProcessor
+public class DiffProcessor
 {
-    private static final Equivalence<JsonNode> EQUIVALENCE
+    protected static final Equivalence<JsonNode> EQUIVALENCE
         = JsonNumEquals.getInstance();
 
-    private final Map<JsonPointer, JsonNode> unchanged;
+    protected final Map<JsonPointer, JsonNode> unchanged;
 
-    private final List<DiffOperation> diffs = Lists.newArrayList();
+    protected final List<DiffOperation> diffs = Lists.newArrayList();
 
-    DiffProcessor(final Map<JsonPointer, JsonNode> unchanged)
+    public DiffProcessor(final Map<JsonPointer, JsonNode> unchanged)
     {
         this.unchanged = ImmutableMap.copyOf(unchanged);
     }
 
-    void valueReplaced(final JsonPointer pointer, final JsonNode oldValue,
+    public void valueReplaced(final JsonPointer pointer, final JsonNode oldValue,
         final JsonNode newValue)
     {
         diffs.add(DiffOperation.replace(pointer, oldValue, newValue));
     }
 
-    void valueRemoved(final JsonPointer pointer, final JsonNode value)
+    public void valueRemoved(final JsonPointer pointer, final JsonNode value)
     {
         diffs.add(DiffOperation.remove(pointer, value));
     }
 
-    void valueAdded(final JsonPointer pointer, final JsonNode value)
+    public void valueAdded(final JsonPointer pointer, final JsonNode value)
     {
         final int removalIndex = findPreviouslyRemoved(value);
         if (removalIndex != -1) {
@@ -77,7 +77,7 @@ final class DiffProcessor
         diffs.add(op);
     }
 
-    JsonPatch getPatch()
+    public JsonPatch getPatch()
     {
         final List<JsonPatchOperation> list = Lists.newArrayList();
 
@@ -88,7 +88,7 @@ final class DiffProcessor
     }
 
     @Nullable
-    private JsonPointer findUnchangedValue(final JsonNode value)
+    protected JsonPointer findUnchangedValue(final JsonNode value)
     {
         final Predicate<JsonNode> predicate = EQUIVALENCE.equivalentTo(value);
         for (final Map.Entry<JsonPointer, JsonNode> entry: unchanged.entrySet())
@@ -97,7 +97,7 @@ final class DiffProcessor
         return null;
     }
 
-    private int findPreviouslyRemoved(final JsonNode value)
+    protected int findPreviouslyRemoved(final JsonNode value)
     {
         final Predicate<JsonNode> predicate = EQUIVALENCE.equivalentTo(value);
 

@@ -22,7 +22,6 @@ package com.github.fge.jsonpatch;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.databind.jsontype.NamedType;
 import com.fasterxml.jackson.databind.jsontype.TypeSerializer;
 import com.github.fge.jsonpatch.operation.*;
 import com.github.fge.msgsimple.bundle.MessageBundle;
@@ -91,16 +90,16 @@ import java.util.List;
 public class JsonPatch
     implements JsonSerializable
 {
-    private static final MessageBundle BUNDLE
+    protected static final MessageBundle BUNDLE
         = MessageBundles.getBundle(JsonPatchMessages.class);
 
 
-    private static final JsonPatchFactory JSON_PATCH_FACTORY = StandardJsonPatchFactory.create();
+    protected static final JsonPatchFactory JSON_PATCH_FACTORY = StandardJsonPatchFactory.create();
 
     /**
      * List of operations
      */
-    private final List<JsonPatchOperation> operations;
+    protected final List<JsonPatchOperation> operations;
 
     /**
      * Constructor
@@ -177,4 +176,8 @@ public class JsonPatch
     {
         serialize(jgen, provider);
     }
+
+    public List<JsonPatchOperation> getOperations() {
+        return operations;
+    } 
 }

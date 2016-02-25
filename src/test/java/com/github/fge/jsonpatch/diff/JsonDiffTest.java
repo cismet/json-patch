@@ -38,10 +38,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public final class JsonDiffTest
 {
-    private static final Equivalence<JsonNode> EQUIVALENCE
+    protected static final Equivalence<JsonNode> EQUIVALENCE
         = JsonNumEquals.getInstance();
 
-    private final JsonNode testData;
+    protected final JsonNode testData;
 
     public JsonDiffTest()
         throws IOException

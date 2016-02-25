@@ -41,7 +41,7 @@ import com.github.fge.jsonpatch.JsonPatchException;
  *
  * <p>It is an error if {@code from} fails to resolve to a JSON value.</p>
  */
-public final class CopyOperation
+public class CopyOperation
     extends DualPathOperation
 {
     public static final String OPERATION_NAME = "copy";

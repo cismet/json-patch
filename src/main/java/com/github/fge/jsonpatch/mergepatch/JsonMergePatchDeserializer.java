@@ -35,7 +35,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-final class JsonMergePatchDeserializer
+public class JsonMergePatchDeserializer
     extends JsonDeserializer<JsonMergePatch>
 {
     /*
@@ -47,7 +47,7 @@ final class JsonMergePatchDeserializer
      *
      * Jackson does not do this automatically; I don't know why...
      */
-    private static final ObjectCodec CODEC = JacksonUtils.newMapper();
+    protected static final ObjectCodec CODEC = JacksonUtils.newMapper();
 
     @Override
     public JsonMergePatch deserialize(final JsonParser jp,

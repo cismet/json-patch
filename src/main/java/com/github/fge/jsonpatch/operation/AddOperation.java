@@ -65,12 +65,12 @@ import com.google.common.collect.Iterables;
  *     [ 1, 2, 3 ]
  * </pre>
  */
-public final class AddOperation
+public class AddOperation
     extends PathValueOperation
 {
     public static final String OPERATION_NAME = "add";
 
-    private static final ReferenceToken LAST_ARRAY_ELEMENT
+    protected static final ReferenceToken LAST_ARRAY_ELEMENT
         = ReferenceToken.fromRaw("-");
 
     @JsonCreator
@@ -103,7 +103,7 @@ public final class AddOperation
             : addToObject(path, node);
     }
 
-    private JsonNode addToArray(final JsonPointer path, final JsonNode node)
+    protected JsonNode addToArray(final JsonPointer path, final JsonNode node)
         throws JsonPatchException
     {
         final JsonNode ret = node.deepCopy();
@@ -132,7 +132,7 @@ public final class AddOperation
         return ret;
     }
 
-    private JsonNode addToObject(final JsonPointer path, final JsonNode node)
+    protected JsonNode addToObject(final JsonPointer path, final JsonNode node)
     {
         final JsonNode ret = node.deepCopy();
         final ObjectNode target = (ObjectNode) path.parent().get(ret);

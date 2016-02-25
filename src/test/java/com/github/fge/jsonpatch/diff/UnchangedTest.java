@@ -38,13 +38,13 @@ import static org.testng.Assert.assertEquals;
 
 public final class UnchangedTest
 {
-    private static final ObjectMapper MAPPER = JacksonUtils.newMapper();
-    private static final TypeReference<Map<JsonPointer, JsonNode>> TYPE_REF
+    protected static final ObjectMapper MAPPER = JacksonUtils.newMapper();
+    protected static final TypeReference<Map<JsonPointer, JsonNode>> TYPE_REF
         = new TypeReference<Map<JsonPointer, JsonNode>>()
     {
     };
 
-    private final JsonNode testData;
+    protected final JsonNode testData;
 
     public UnchangedTest()
         throws IOException

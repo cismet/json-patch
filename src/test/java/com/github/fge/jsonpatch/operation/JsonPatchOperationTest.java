@@ -44,15 +44,15 @@ import static org.testng.Assert.*;
 @Test
 public abstract class JsonPatchOperationTest
 {
-    private static final MessageBundle BUNDLE
+    protected static final MessageBundle BUNDLE
         = MessageBundles.getBundle(JsonPatchMessages.class);
 
-    private static final Equivalence<JsonNode> EQUIVALENCE
+    protected static final Equivalence<JsonNode> EQUIVALENCE
         = JsonNumEquals.getInstance();
 
-    private final JsonNode errors;
-    private final JsonNode ops;
-    private final ObjectReader reader;
+    protected final JsonNode errors;
+    protected final JsonNode ops;
+    protected final ObjectReader reader;
 
     protected JsonPatchOperationTest(final String directoryName,
             final String operationName,
