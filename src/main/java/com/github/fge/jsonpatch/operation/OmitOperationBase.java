@@ -17,10 +17,10 @@ import com.google.common.collect.Iterables;
  */
 public abstract class OmitOperationBase extends PathValueOperation
 {
-    private static final Equivalence<JsonNode> EQUIVALENCE
+    protected static final Equivalence<JsonNode> EQUIVALENCE
         = JsonNumEquals.getInstance();
 
-    private PathMissingPolicy pathMissingPolicy;
+    protected PathMissingPolicy pathMissingPolicy;
 
     public OmitOperationBase(final String op,
                              final JsonPointer path,

@@ -32,7 +32,6 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.fge.jackson.jsonpointer.JsonPointer;
 import com.github.fge.jsonpatch.JsonPatchException;
 import com.github.fge.jsonpatch.JsonPatchMessages;
-import com.github.fge.jsonpatch.operation.JsonPatchOperation;
 import com.github.fge.msgsimple.bundle.MessageBundle;
 import com.github.fge.msgsimple.load.MessageBundles;
 import com.google.common.collect.Iterables;
@@ -45,7 +44,7 @@ import java.io.IOException;
  * <p>This operation only takes one pointer ({@code path}) as an argument. It
  * is an error condition if no JSON value exists at that pointer.</p>
  */
-public final class RemoveOperation
+public class RemoveOperation
     implements JsonPatchOperation
 {
     public static final String OPERATION_NAME = "remove";

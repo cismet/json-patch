@@ -31,10 +31,10 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.io.IOException;
 
 @ParametersAreNonnullByDefault
-final class NonObjectMergePatch
+public class NonObjectMergePatch
     extends JsonMergePatch
 {
-    private final JsonNode node;
+    protected final JsonNode node;
 
     NonObjectMergePatch(final JsonNode node)
     {

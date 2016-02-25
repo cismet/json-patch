@@ -19,7 +19,7 @@
 
 package com.github.fge.jsonpatch;
 
-public final class JsonPatchException
+public class JsonPatchException
     extends Exception
 {
     public JsonPatchException(final String message)

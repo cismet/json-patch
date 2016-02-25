@@ -21,20 +21,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
   
-    <parent>
-        <groupId>de.cismet.cids</groupId>
-        <artifactId>cids-parent</artifactId>
-        <version>2.3.1</version>
-    </parent>
-  
-  
-    <groupId>de.cismet</groupId>
+    <groupId>com.box</groupId>
     <artifactId>json-patch</artifactId>
     <version>1.13-SNAPSHOT</version>
     <packaging>jar</packaging>
  
     <name>json-patch</name>
-    <description>cismet fork of the com.box.jsonpatch JSON Patch (RFC 6902) and JSON Merge Patch (RFC 7386) implementation in Java with additional support for CidsBeans</description>
+    <description>cismet fork of the com.box.jsonpatch JSON Patch (RFC 6902) and JSON Merge Patch (RFC 7386) implementation in Java</description>
     <url>https://github.com/cismet/json-patch</url>
   
     <licenses>
@@ -129,9 +122,8 @@
             <artifactId>mockito-core</artifactId>
             <version>1.9.5</version>
             <scope>test</scope>
-        </dependency>
-    </dependencies>
-        
+        </dependency> 
+    </dependencies>       
     <build>
         <plugins>
             <!-- Bundle sources -->

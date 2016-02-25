@@ -66,7 +66,7 @@ import java.io.IOException;
 public abstract class JsonMergePatch
     implements JsonSerializable
 {
-    private static final ObjectMapper MAPPER = JacksonUtils.newMapper();
+    protected static final ObjectMapper MAPPER = JacksonUtils.newMapper();
     protected static final MessageBundle BUNDLE
         = MessageBundles.getBundle(JsonPatchMessages.class);
 

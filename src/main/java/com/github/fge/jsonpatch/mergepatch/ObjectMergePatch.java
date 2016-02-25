@@ -38,11 +38,11 @@ import java.util.Map;
 import java.util.Set;
 
 @ParametersAreNonnullByDefault
-final class ObjectMergePatch
+public class ObjectMergePatch
     extends JsonMergePatch
 {
-    private final Set<String> removedMembers;
-    private final Map<String, JsonMergePatch> modifiedMembers;
+    protected final Set<String> removedMembers;
+    protected final Map<String, JsonMergePatch> modifiedMembers;
 
     ObjectMergePatch(final Set<String> removedMembers,
         final Map<String, JsonMergePatch> modifiedMembers)
