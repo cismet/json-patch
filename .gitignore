@@ -6,4 +6,9 @@ out
 build
 .gradle
 gradle.properties
+.classpath
+.project
+.settings
+test-output
 
+/.nb-gradle/
