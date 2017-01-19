@@ -37,13 +37,13 @@ import static org.testng.Assert.*;
 
 public final class JsonPatchTest
 {
-    private static final MessageBundle BUNDLE
+    protected static final MessageBundle BUNDLE
         = MessageBundles.getBundle(JsonPatchMessages.class);
 
-    private static final JsonNodeFactory FACTORY = JacksonUtils.nodeFactory();
+    protected static final JsonNodeFactory FACTORY = JacksonUtils.nodeFactory();
 
-    private JsonPatchOperation op1;
-    private JsonPatchOperation op2;
+    protected JsonPatchOperation op1;
+    protected JsonPatchOperation op2;
 
     @BeforeMethod
     public void init()

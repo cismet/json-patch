@@ -42,12 +42,12 @@ import static org.testng.Assert.fail;
 
 public final class NonObjectMergePatchTest
 {
-    private static final Equivalence<JsonNode> EQUIVALENCE
+    protected static final Equivalence<JsonNode> EQUIVALENCE
         = JsonNumEquals.getInstance();
-    private static final MessageBundle BUNDLE
+    protected static final MessageBundle BUNDLE
         = MessageBundles.getBundle(JsonPatchMessages.class);
 
-    private final JsonNode testData;
+    protected final JsonNode testData;
 
     public NonObjectMergePatchTest()
         throws IOException

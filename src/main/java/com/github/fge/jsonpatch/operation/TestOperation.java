@@ -25,7 +25,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.github.fge.jackson.JsonNumEquals;
 import com.github.fge.jackson.jsonpointer.JsonPointer;
 import com.github.fge.jsonpatch.JsonPatchException;
-import com.github.fge.jsonpatch.operation.PathValueOperation;
 import com.google.common.base.Equivalence;
 
 /**
@@ -41,12 +40,12 @@ import com.google.common.base.Equivalence;
  * is defined by JSON Schema itself. As such, this operation reuses {@link
  * JsonNumEquals} for testing equality.</p>
  */
-public final class TestOperation
+public class TestOperation
     extends PathValueOperation
 {
     public static final String OPERATION_NAME = "test";
 
-    private static final Equivalence<JsonNode> EQUIVALENCE
+    protected static final Equivalence<JsonNode> EQUIVALENCE
         = JsonNumEquals.getInstance();
 
     @JsonCreator

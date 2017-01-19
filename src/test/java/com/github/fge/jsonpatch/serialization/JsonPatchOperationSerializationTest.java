@@ -41,12 +41,12 @@ import static org.testng.Assert.*;
 @Test
 public abstract class JsonPatchOperationSerializationTest
 {
-    private static final Equivalence<JsonNode> EQUIVALENCE
+    protected static final Equivalence<JsonNode> EQUIVALENCE
         = JsonNumEquals.getInstance();
 
-    private final JsonNode node;
-    private final ObjectReader reader;
-    private final ObjectWriter writer;
+    protected final JsonNode node;
+    protected final ObjectReader reader;
+    protected final ObjectWriter writer;
 
     /**
      * @param directoryName The directory name for the data provider JSON

@@ -64,16 +64,16 @@ import java.util.Set;
  * @since 1.2
  */
 @ParametersAreNonnullByDefault
-public final class JsonDiff
+public class JsonDiff
 {
-    private static final MessageBundle BUNDLE
+    protected static final MessageBundle BUNDLE
         = MessageBundles.getBundle(JsonPatchMessages.class);
-    private static final ObjectMapper MAPPER = JacksonUtils.newMapper();
+    protected static final ObjectMapper MAPPER = JacksonUtils.newMapper();
 
-    private static final Equivalence<JsonNode> EQUIVALENCE
+    protected static final Equivalence<JsonNode> EQUIVALENCE
         = JsonNumEquals.getInstance();
 
-    private JsonDiff()
+    protected JsonDiff()
     {
     }
 
@@ -119,7 +119,7 @@ public final class JsonDiff
         }
     }
 
-    private static void generateDiffs(final DiffProcessor processor,
+    protected static void generateDiffs(final DiffProcessor processor,
         final JsonPointer pointer, final JsonNode source, final JsonNode target)
     {
         if (EQUIVALENCE.equivalent(source, target))
@@ -159,7 +159,7 @@ public final class JsonDiff
                 (ArrayNode) target);
     }
 
-    private static void generateObjectDiffs(final DiffProcessor processor,
+    protected static void generateObjectDiffs(final DiffProcessor processor,
         final JsonPointer pointer, final ObjectNode source,
         final ObjectNode target)
     {
@@ -179,7 +179,14 @@ public final class JsonDiff
                 target.get(field));
     }
 
-    private static void generateArrayDiffs(final DiffProcessor processor,
+    /**
+     *
+     * @param processor
+     * @param pointer
+     * @param source
+     * @param target
+     */
+    protected static void generateArrayDiffs(final DiffProcessor processor,
         final JsonPointer pointer, final ArrayNode source,
         final ArrayNode target)
     {
@@ -205,7 +212,7 @@ public final class JsonDiff
 
 
     @VisibleForTesting
-    static Map<JsonPointer, JsonNode> getUnchangedValues(final JsonNode source,
+    protected static Map<JsonPointer, JsonNode> getUnchangedValues(final JsonNode source,
         final JsonNode target)
     {
         final Map<JsonPointer, JsonNode> ret = Maps.newHashMap();
@@ -213,7 +220,7 @@ public final class JsonDiff
         return ret;
     }
 
-    private static void computeUnchanged(final Map<JsonPointer, JsonNode> ret,
+    protected static void computeUnchanged(final Map<JsonPointer, JsonNode> ret,
         final JsonPointer pointer, final JsonNode first, final JsonNode second)
     {
         if (EQUIVALENCE.equivalent(first, second)) {
@@ -240,7 +247,7 @@ public final class JsonDiff
         }
     }
 
-    private static void computeObject(final Map<JsonPointer, JsonNode> ret,
+    protected static void computeObject(final Map<JsonPointer, JsonNode> ret,
         final JsonPointer pointer, final JsonNode source,
         final JsonNode target)
     {
@@ -257,7 +264,7 @@ public final class JsonDiff
         }
     }
 
-    private static void computeArray(final Map<JsonPointer, JsonNode> ret,
+    protected static void computeArray(final Map<JsonPointer, JsonNode> ret,
         final JsonPointer pointer, final JsonNode source, final JsonNode target)
     {
         final int size = Math.min(source.size(), target.size());

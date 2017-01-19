@@ -14,14 +14,14 @@ import java.io.IOException;
  */
 public class JsonPatchFactory
 {
-    private static final MessageBundle BUNDLE
+    protected static final MessageBundle BUNDLE
         = MessageBundles.getBundle(JsonPatchMessages.class);
 
-    private final ObjectMapper mapper;
-    private final ObjectReader reader;
-    private final ObjectWriter writer;
+    protected final ObjectMapper mapper;
+    protected final ObjectReader reader;
+    protected final ObjectWriter writer;
 
-    public JsonPatchFactory(ObjectMapper mapper)
+    public JsonPatchFactory(final ObjectMapper mapper)
     {
         this.mapper = mapper;
         reader = mapper.reader();

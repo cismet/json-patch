@@ -37,8 +37,8 @@ import static org.testng.Assert.*;
 @Test
 public abstract class JsonPatchTestSuite
 {
-    private final JsonNode testNode;
-    private final ObjectReader reader;
+    protected final JsonNode testNode;
+    protected final ObjectReader reader;
 
     public JsonPatchTestSuite(final String directory,
           final JsonPatchFactory factory)

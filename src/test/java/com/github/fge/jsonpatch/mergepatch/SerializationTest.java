@@ -39,12 +39,12 @@ import static org.testng.Assert.assertTrue;
 
 public final class SerializationTest
 {
-    private static final Equivalence<JsonNode> EQUIVALENCE
+    protected static final Equivalence<JsonNode> EQUIVALENCE
         = JsonNumEquals.getInstance();
 
-    private final ObjectMapper mapper = JacksonUtils.newMapper();
-    private final JsonNode nonObjectTestData;
-    private final JsonNode objectTestData;
+    protected final ObjectMapper mapper = JacksonUtils.newMapper();
+    protected final JsonNode nonObjectTestData;
+    protected final JsonNode objectTestData;
 
     public SerializationTest()
         throws IOException

@@ -13,7 +13,7 @@ import com.github.fge.jsonpatch.operation.policy.PathMissingPolicy;
  * It will do nothing if the actual value at {@code path} is not equal to {@code value}.
  * It will do nothing if there is no value at {@code path}.
  */
-public final class OmitOptionalOperation extends OmitOperationBase
+public class OmitOptionalOperation extends OmitOperationBase
 {
     public static final String OPERATION_NAME = "omit?";
 

@@ -63,7 +63,7 @@ import com.github.fge.jsonpatch.JsonPatchException;
  *     [ { "x": "victim" } ]
  * </pre>
  */
-public final class MoveOperation
+public class MoveOperation
     extends DualPathOperation
 {
     public static final String OPERATION_NAME = "move";
