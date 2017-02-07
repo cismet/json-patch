@@ -81,6 +81,19 @@
             <organization>cismet GmbH</organization>
         </developer>
     </developers>
+    
+    <dependencyManagement>  
+        <!-- IMPORT of cismet-ext-bom -->
+        <dependencies>
+            <dependency>
+                <groupId>de.cismet</groupId>
+                <artifactId>cismet-ext-bom</artifactId>
+                <version>5.0-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <!-- 
         TODO define versions in dependency management section of ext-libs-bom 
