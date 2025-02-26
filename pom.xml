@@ -23,7 +23,7 @@
     <parent>
         <groupId>de.cismet</groupId>
         <artifactId>cismet-parent</artifactId>
-        <version>8.0</version>
+        <version>9.0</version>
     </parent>
   
     <groupId>de.cismet</groupId>
@@ -88,7 +88,7 @@
             <dependency>
                 <groupId>de.cismet</groupId>
                 <artifactId>cismet-ext-bom</artifactId>
-                <version>8.0</version>
+                <version>9.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -165,4 +165,24 @@
         </dependency>
         <!-- END: test dependencies -->      
     </dependencies> 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <!-- put it in the phase before to ensure, that the test-jar was built before the sign plugin is running-->
+                            <phase>prepare-package</phase>
+                            <goals>
+                                <goal>test-jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <finalName>cismetGuiCommons</finalName>
+    </build>
 </project>
