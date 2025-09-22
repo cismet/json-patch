@@ -23,7 +23,7 @@
     <parent>
         <groupId>de.cismet</groupId>
         <artifactId>cismet-parent</artifactId>
-        <version>9.0</version>
+        <version>10.1-SNAPSHOT</version>
     </parent>
   
     <groupId>de.cismet</groupId>
@@ -40,7 +40,7 @@
             skip jalopy code re-formatting to preserve original code format and 
             thus to to allow push request / rebasing 
         -->
-        <jalopy.skip>true</jalopy.skip>
+        <prettier.skip>true</prettier.skip>
     </properties>
   
     <licenses>
@@ -88,7 +88,7 @@
             <dependency>
                 <groupId>de.cismet</groupId>
                 <artifactId>cismet-ext-bom</artifactId>
-                <version>9.0</version>
+                <version>10.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -125,7 +125,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>16.0.1</version>
+            <version>32.1.1-jre</version>
         </dependency>
         <dependency>
             <groupId>com.github.fge</groupId>
@@ -183,6 +183,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-        <finalName>cismetGuiCommons</finalName>
+        <finalName>jsonPatch</finalName>
     </build>
 </project>
